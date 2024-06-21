@@ -17,6 +17,10 @@ jobs:
         PYTHONPATH: "/home/avd/.local/lib/python3.11/site-packages"
 
     steps:
+      # https://github.com/actions/runner/issues/863
+      - shell: bash
+          run: 'echo HOME=/home/avd | sudo tee -a $GITHUB_ENV'
+
       - name: Checkout code
         uses: actions/checkout@v3
 
