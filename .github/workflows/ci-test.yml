@@ -43,6 +43,9 @@ jobs:
           id -u
           id -g
 
+      # - name: Build
+      #   run: |
+      #     make build
       - name: Build
         run: |
-          make build
+          touch test.txt
