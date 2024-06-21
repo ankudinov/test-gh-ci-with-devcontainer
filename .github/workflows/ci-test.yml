@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/aristanetworks/avd/universal:python3.11-avd-v4.8.0
-      options: --user 1
-      env:
-        PYTHONPATH: "/home/avd/.local/lib/python3.11/site-packages"
+      # image: ghcr.io/aristanetworks/avd/universal:python3.11-avd-v4.8.0
+      image: python:3.11
+      # options: --user 1
+      # env:
+      #   PYTHONPATH: "/home/avd/.local/lib/python3.11/site-packages"
 
     steps:
       # https://github.com/actions/runner/issues/863
