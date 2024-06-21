@@ -46,6 +46,7 @@ jobs:
 
       - name: Build
         run: |
+          pip install passlib
           make build
       - name: Build
         run: |
