@@ -12,7 +12,6 @@ jobs:
 
     container:
       image: ghcr.io/aristanetworks/avd/universal:python3.11-avd-v4.7.1
-      # image: python:3.11
       # options: --user 0
       options: --user 1001
       env:
