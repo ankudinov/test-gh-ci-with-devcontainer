@@ -19,26 +19,9 @@ jobs:
         PYTHONPATH: "/home/avd/.local/lib/python3.11/site-packages"
 
     steps:
-      # https://github.com/actions/runner/issues/863
-      # - name: setup homedir
-      #   id: setup-homedir
-      #   uses: actions/github-script@v6
-      #   env:
-      #     CONTAINER_ID: ${{ job.container.id }}
-      #   with:
-      #     result-encoding: string
-      #     script: |
-      #       const z = process.env.CONTAINER_ID;
-      #       if (z) {
-      #         const newhome = `/home/avd`;
-      #         await io.mkdirP(newhome);
-      #         core.exportVariable("HOME", newhome);
-      #         return newhome;
-      #       }
-      #       return process.env.HOME;
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: check UID
         run: |
@@ -49,6 +32,3 @@ jobs:
         run: |
           pip install passlib
           make build
-      - name: Build
-        run: |
-          touch test.txt
