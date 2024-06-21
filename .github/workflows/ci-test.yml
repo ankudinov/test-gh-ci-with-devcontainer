@@ -38,11 +38,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # - name: check UID
-      #   run: |
-      #     id -u
-      #     id -g
-      #     whoami
+      - name: check UID
+        run: |
+          id -u
+          id -g
 
       - name: Build
         run: |
