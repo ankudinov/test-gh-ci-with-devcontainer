@@ -1,0 +1,22 @@
+---
+name: CI Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/aristanetworks/avd/universal:python3.11-avd-v4.8.0
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          make build
