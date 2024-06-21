@@ -14,8 +14,8 @@ jobs:
       image: ghcr.io/aristanetworks/avd/universal:python3.11-avd-v4.8.0
       # image: python:3.11
       options: --user 0
-      # env:
-      #   PYTHONPATH: "/home/avd/.local/lib/python3.11/site-packages"
+      env:
+        PYTHONPATH: "/home/avd/.local/lib/python3.11/site-packages"
 
     steps:
       # https://github.com/actions/runner/issues/863
@@ -44,9 +44,9 @@ jobs:
           id -u
           id -g
 
-      # - name: Build
-      #   run: |
-      #     make build
+      - name: Build
+        run: |
+          make build
       - name: Build
         run: |
           touch test.txt
