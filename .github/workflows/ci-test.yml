@@ -13,7 +13,8 @@ jobs:
     container:
       image: ghcr.io/aristanetworks/avd/universal:python3.11-avd-v4.8.0
       # image: python:3.11
-      options: --user 0
+      # options: --user 0
+      options: --user 1001
       env:
         PYTHONPATH: "/home/avd/.local/lib/python3.11/site-packages"
 
