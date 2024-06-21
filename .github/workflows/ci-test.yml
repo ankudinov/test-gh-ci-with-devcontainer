@@ -18,8 +18,22 @@ jobs:
 
     steps:
       # https://github.com/actions/runner/issues/863
-      - shell: bash
-        run: 'echo HOME=/home/avd | sudo tee -a $GITHUB_ENV'
+      - name: setup homedir
+        id: setup-homedir
+        uses: actions/github-script@v6
+        env:
+          CONTAINER_ID: ${{ job.container.id }}
+        with:
+          result-encoding: string
+          script: |
+            const z = process.env.CONTAINER_ID;
+            if (z) {
+              const newhome = `/home/avd`;
+              await io.mkdirP(newhome);
+              core.exportVariable("HOME", newhome);
+              return newhome;
+            }
+            return process.env.HOME;
 
       - name: Checkout code
         uses: actions/checkout@v3
