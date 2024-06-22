@@ -27,13 +27,13 @@ jobs:
           id -u
           id -g
 
-      - name: start cLab
-        run: |
-          bash -c "$(curl -sL https://get.containerlab.dev)"
-          export CEOS_LAB_VERSION="4.32.1F"
-          pip install "eos-downloader>=0.10.1"
-          ardl --token "${{ secrets.ARTOKEN }}" get eos --image-type cEOS --version ${CEOS_LAB_VERSION}  --import-docker
-          make start
+      # - name: start cLab
+      #   run: |
+      #     bash -c "$(curl -sL https://get.containerlab.dev)"
+      #     export CEOS_LAB_VERSION="4.32.1F"
+      #     pip install "eos-downloader>=0.10.1"
+      #     ardl --token "${{ secrets.ARTOKEN }}" get eos --image-type cEOS --version ${CEOS_LAB_VERSION}  --import-docker
+      #     make start
 
       - name: Build
         run: |
