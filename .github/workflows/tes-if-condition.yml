@@ -10,7 +10,7 @@ jobs:
   build:
     # if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' ) || ${{ vars.DEBUG_CONTAINER_ACTIONS }} == "true"
     # if: ${{ vars.DEBUG_CONTAINER_ACTIONS }} == "false"
-    if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' )
+    if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' ) || github.ref == 'refs/heads/abc'
     runs-on: ubuntu-latest
     steps:
 
