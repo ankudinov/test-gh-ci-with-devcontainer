@@ -1,5 +1,5 @@
 ---
-name: CI Test
+name: test if condition
 
 on:
   push:
@@ -16,3 +16,4 @@ jobs:
         run: |
           id -u
           id -g
+          echo "Testing if condition!"
