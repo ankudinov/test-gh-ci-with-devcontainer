@@ -6,8 +6,8 @@ on:
     branches:
       - main
 
-env:
-  run_workflow: ${{ vars.ENV_CONTEXT_VAR }}
+# env:
+#   run_workflow: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
   build:
@@ -22,4 +22,4 @@ jobs:
           id -u
           id -g
           echo "Testing if condition!"
-          echo "$run_workflow"
+          echo "${{ vars.ENV_CONTEXT_VAR }}"
