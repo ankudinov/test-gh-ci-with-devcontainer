@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+env:
+  run_workflow: ${{ vars.ENV_CONTEXT_VAR }}
+
 jobs:
   build:
     # if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' ) || ${{ vars.DEBUG_CONTAINER_ACTIONS }} == "true"
@@ -19,4 +22,4 @@ jobs:
           id -u
           id -g
           echo "Testing if condition!"
-          echo "${{ env.DEBUG_CONTAINER_ACTIONS }}"
+          echo "$run_workflow"
