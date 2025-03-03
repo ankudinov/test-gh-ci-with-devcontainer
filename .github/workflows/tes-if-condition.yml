@@ -19,4 +19,4 @@ jobs:
           id -u
           id -g
           echo "Testing if condition!"
-          echo "${{ vars.DEBUG_CONTAINER_ACTIONS }}"
+          echo "${{ env.DEBUG_CONTAINER_ACTIONS }}"
