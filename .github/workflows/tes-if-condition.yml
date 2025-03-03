@@ -9,7 +9,8 @@ on:
 jobs:
   build:
     # if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' ) || ${{ vars.DEBUG_CONTAINER_ACTIONS }} == "true"
-    if: ${{ vars.DEBUG_CONTAINER_ACTIONS }} == "false"
+    # if: ${{ vars.DEBUG_CONTAINER_ACTIONS }} == "false"
+    if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' )
     runs-on: ubuntu-latest
     steps:
 
