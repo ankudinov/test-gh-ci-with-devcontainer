@@ -3,17 +3,15 @@ name: test if condition
 
 on:
   push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 # env:
 #   run_workflow: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
   build:
-    if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' ) || vars.DEBUG_CONTAINER_ACTIONS == 'false'
-    # if: vars.DEBUG_CONTAINER_ACTIONS == 'false'
-    # if: ( github.repository == 'aristanetworks/avd' && github.ref == 'refs/heads/devel' ) || github.ref == 'refs/heads/main'
+    if: ( github.repository == 'ankudinov/test-gh-ci-with-devcontainer' && ( github.ref == 'refs/heads/main' || github.event.action == 'published' ) ) || vars.DEBUG_CONTAINER_ACTIONS == 'false'
     runs-on: ubuntu-latest
     steps:
 
