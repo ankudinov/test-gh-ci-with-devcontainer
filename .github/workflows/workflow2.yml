@@ -2,7 +2,7 @@ name: workflow2
 
 on:
   workflow_run:
-    workflows: ["workflow1"]
+    workflows: [workflow1]
     types:
       - complete
 
