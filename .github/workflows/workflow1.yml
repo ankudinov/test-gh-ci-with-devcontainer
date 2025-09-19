@@ -9,4 +9,6 @@ jobs:
     steps:
       - name: test
         run: echo "test1"
+      - name: id
+        run: echo $(id -u)
   
